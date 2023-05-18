@@ -163,7 +163,7 @@ END
 	sed -i -e 's/\(strncpy.*sizeof(info.name)\));/\1 - 1); info.name[sizeof(info.name) - 1] = '"'"'\\0'"'"';/' \
 		common/cras_shm.c
 	sed -i -e 's/^struct \([^_]\)/struct __attribute__((__packed__)) \1/' \
-		common/cras_messages.h
+		../include/cras_messages.h
 
         # Directory to install CRAS library/binaries
         CRASLIBDIR="/usr/local$archextrapath/lib"
